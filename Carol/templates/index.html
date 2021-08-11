@@ -84,46 +84,29 @@
         </section>
 
         <!--===== SKILLS =====-->
-        <div class="row justify-content-center jus">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-3">Angular</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" class="front-end img-responsive img-fluid" alt="">
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+                <div class="skills__box">
+                    {% for category in categories %}
+                    <h3 class="skills__subtitle">{{category.name}}</h3>
+                        {% for skills in category.skills_set.all %}
+                        
+                            <h3 class="skills__name">{{skills.skill_name}}</h3>
+                            <img style="object-fit: contain; height: 90vh; width:40%;" src="{{skills.photo.url}}" alt="">
+                        {% endfor %}
+                    {% endfor %}
+                    
+                </div>
+
+                <div class="skills__img">
+                    <img src="{% static 'assets/img/skill.jpg' %}" alt="">
+                </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-3">Github</h3>
-                <img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png" class="front-end front-end img-responsive img-fluid" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-3">JavaScript</h3>
-                <img src="https://referralrock.com/wp-content/uploads/2018/08/javascript-logo-1.png" class="front-end" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-3">JQuery</h3>
-                <img src="https://mpng.subpng.com/20180704/zoa/kisspng-jquery-ui-javascript-web-browser-pasargad-5b3d093837a4d4.5712269815307267122279.jpg" class="front-end" alt="">
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="https://www.fullstackpython.com/img/logos/django.png" class="back-end" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-5">Python</h3>
-                <img src="https://images.ctfassets.net/mrop88jh71hl/55rrbZfwMaURHZKAUc5oOW/9e5fe805eb03135b82e962e92169ce6d/python-programming-language.png" class="back-end" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="https://newscrewdriver.files.wordpress.com/2018/02/flask.png?w=700" class="back-end" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-5">Heroku</h3>
-                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K2q0A5SX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/2elgd5zp07wkeilkna63.png" class="back-end" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <h3 class="text-center mr-5">PostgreSql</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8cg1TN7Lpnv4_AXulAlDV9Q-Lfvh--TTAbam-ii_HiKSD7dD7Ye6txD8AKI7dl5iPCpw&usqp=CAU" class="back-end" alt="">
-            </div>
-        </div>
-    </div>
-        
+        </section>
+     
+
 
         <!--===== PORTFOLIO =====-->
         <section class="portfolio section" id="portfolio">
