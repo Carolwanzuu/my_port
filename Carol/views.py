@@ -8,7 +8,7 @@ def index(request):
     home = Home.objects.all()
 
     # About
-    about = About.objects.latest('updated')
+    about = About.objects.all()
     
     profiles = Profile.objects.filter(about=about)
 
