@@ -5,7 +5,7 @@ from .models import Home, About, Profile, Category, Skills, Portfolio
 def index(request): 
 
     # Home
-    home = Home.objects.latest('updated')
+    home = Home.objects.all()
 
     # About
     about = About.objects.latest('updated')
