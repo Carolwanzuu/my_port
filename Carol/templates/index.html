@@ -85,30 +85,30 @@
         </section>
 
         <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
 
-        <h2 class="section-title">Skills</h2>
-
-        <div class="container">
-            <div class="row m-auto">
-                {% for category in categories %}
-                <h3 class="skills__subtitle">{{category.name}}</h3>
-                {% for skills in category.skills_set.all %}
-                <div class="col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h1 class="skills__name card-title">{{skills.skill_name}}</h1>
-                            <hr>
-                            <img class="img-fluid" style="object-fit: contain; height: 30vh; width:auto;"
-                                src="{{skills.photo.url}}">
+            <div class="container">
+                <div class="row m-auto">
+                    {% for category in categories %}
+                    <h3 class="skills__subtitle">{{category.name}}</h3>
+                    {% for skills in category.skills_set.all %}
+                    <div class="col-md-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h1 class="skills__name card-title">{{skills.skill_name}}</h1>
+                                <hr>
+                                <img class="img-fluid" style="object-fit: contain; height: 30vh; width:auto;"
+                                    src="{{skills.photo.url}}">
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
+                    {% endfor %}
+
                 </div>
-                {% endfor %}
-                {% endfor %}
-
             </div>
-        </div>
-
+        </section>
 
 
         <!--===== PORTFOLIO =====-->
