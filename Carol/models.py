@@ -53,7 +53,7 @@ class Skills(models.Model):
     category = models.ForeignKey(Category,
                                 on_delete=models.CASCADE)
     skill_name = models.CharField(max_length=20)
-    photo = models.ImageField( null=True)
+    photo = models.ImageField( null=True,upload_to='profile/')
 
 
     
@@ -61,7 +61,7 @@ class Skills(models.Model):
 # PORTFOLIO SECTION
 
 class Portfolio(models.Model):
-    image = models.ImageField(upload_to='portfolio/')
+    image = models.ImageField(upload_to='profile/')
     link = models.URLField(max_length=200)
 
     def __str__(self):
